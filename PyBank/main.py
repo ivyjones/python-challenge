@@ -26,6 +26,9 @@ with open(budget_data) as csvfile:
         total_months.append(row[0])
         total_profits.append(row[1])
 
+    #print
+    print("Financial Analysis")
+    print("----------------------------")
     #total number of months included in the dataset
     print("Total Months: " + str(len(total_months)))
 
@@ -59,7 +62,9 @@ with open(budget_data) as csvfile:
     print("Greatest Decrease in Profits: " + str(greatest_decrease_month) + " ($" + str(greatest_decrease) + ")")
    
 #export results to analysis folder
-f=open("./analysis/pybank_analysis.txt", "w") 
+f=open("./analysis/pybank_analysis.txt", "w")
+print("Financial Analysis", file=f)
+print("----------------------------", file=f)
 print("Total Months: " + str(len(total_months)), file=f)
 print("Total: $" + str(total_profits_sum), file=f)
 print("Average Change: $" + str(average), file=f)
